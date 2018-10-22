@@ -119,11 +119,11 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols   "
+  [[ -n "$symbols  " ]] && prompt_segment $PRIMARY_FG default " $symbols   "
 }
 
 prompt_name() {
-  prompt_segment blue $PRIMARY_FG " 韓"
+  prompt_segment blue $PRIMARY_FG " 韓 "
 }
 
 # Display current virtual environment
