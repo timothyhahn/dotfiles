@@ -1,0 +1,5 @@
+alias gpoh="git push origin HEAD"
+alias ff="find . -name"
+alias refresh="source ~/.profile"
+alias vim="nvim"
+alias rvim="/usr/local/bin/vim"

@@ -1,0 +1,5 @@
+[user]
+	email = hi@timhhn.com
+    name = Tim Hahn
+[credential]
+	helper = osxkeychain
