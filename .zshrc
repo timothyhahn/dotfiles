@@ -22,3 +22,5 @@ antigen bundle timothyhahn/dotfiles plugins/zsh-kubernetes
 
 # Tell Antigen that you're done.
 antigen apply
+
+source ~/.profile
