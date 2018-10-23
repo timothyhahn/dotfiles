@@ -4,6 +4,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 export KUBECONFIG=~/.kube/config
 export EDITOR="nvim"
+export PHB_HOME="$HOME/code/bbh/phb"
 source ~/.aliases
 
 source <(kubectl completion zsh)

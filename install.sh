@@ -68,6 +68,13 @@ ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
 rm -rf ~/.vimrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 
-mkdir -p $HOME/config/nvim
+mkdir -p $HOME/.config/nvim
 rm -rf ~/.config/nvim/init.vim
 ln -s $HOME/.dotfiles/.config/nvim/init.vim $HOME/.config/nvim/init.vim
+
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
