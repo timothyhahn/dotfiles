@@ -5,14 +5,14 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle sudo
 antigen bundle asdf
-antigen bundle docker
 antigen bundle ssh-agent
 antigen bundle tmux
+antigen bundle kubectl
 
-# Syntax highlighting bundle.
+# Other bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 
 # Load the theme.
 antigen theme timothyhahn/dotfiles themes/hahn
@@ -22,5 +22,8 @@ antigen bundle timothyhahn/dotfiles plugins/zsh-kubernetes
 
 # Tell Antigen that you're done.
 antigen apply
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 source ~/.profile
