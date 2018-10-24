@@ -11,6 +11,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'luochen1990/rainbow'
 Plug 'mxw/vim-jsx'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'posva/vim-vue'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -18,7 +19,6 @@ Plug 'scrooloose/syntastic'
 Plug 'slashmili/alchemist.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-"Plug 'valloric/youcompleteme'
 Plug 'xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
@@ -72,12 +72,14 @@ set wildignore=*.o,*~,*.pyc,*.swp,*.pyo,*.class,*.so
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$\|node_modules\|git\|target/'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  set grepprg=ag\ --color=never
+
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-endif
+"if executable('rg')
+"  set grepprg=rg\ --color=never
+"  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+"endif
 inoremap jk <esc>
 inoremap kj <esc>
 nnoremap ; :

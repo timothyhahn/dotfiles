@@ -11,7 +11,6 @@ antigen bundle tmux
 antigen bundle kubectl
 
 # Other bundles
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
 # Load the theme.
