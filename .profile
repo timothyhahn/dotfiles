@@ -10,5 +10,7 @@ source ~/.aliases
 source <(kubectl completion zsh)
 source /usr/local/opt/asdf/asdf.sh
 
+alias gophb="cd $PHB_HOME"
+
 clear
 archey -o
