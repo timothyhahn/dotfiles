@@ -25,6 +25,8 @@ mas install 961632517
 mas install 585829637
 ## iaWriter
 mas install 775737590
+## Bear
+mas install 1091189122
 
 # Create my directories
 mkdir $HOME/code
