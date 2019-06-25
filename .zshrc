@@ -12,17 +12,22 @@ antigen bundle kubectl
 
 # Other bundles
 antigen bundle zsh-users/zsh-history-substring-search
-
-# Load the theme.
-antigen theme timothyhahn/dotfiles themes/hahn
-
-# Load my plugins.
-antigen bundle timothyhahn/dotfiles plugins/zsh-kubernetes
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tell Antigen that you're done.
 antigen apply
+
+autoload -U promptinit; promptinit
+prompt pure
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 source ~/.profile
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
