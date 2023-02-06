@@ -20,16 +20,11 @@ brew bundle
 
 # Install Mac App Store Apps
 ## Be Focused Pro
-mas install 961632517
-## Todoist
-mas install 585829637
-## iaWriter
-mas install 775737590
+mas install 961632517x
 ## Bear
 mas install 1091189122
 
-# Create my directories
-mkdir $HOME/code
+# Create my directoriesx
 mkdir $HOME/.config
 mkdir $HOME/.zsh
 

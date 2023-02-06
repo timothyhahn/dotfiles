@@ -3,5 +3,52 @@ alias ff="find . -name"
 alias refresh="source ~/.profile"
 alias vim="nvim"
 alias rvim="/usr/local/bin/vim"
-alias bhfetch="$PHB_HOME/projects/bhapi/bin/fetch"
-alias bhload="$PHB_HOME/projects/bhapi/bin/load"
+alias gojava="cd ~/Development/java"
+alias oops="git commit --amend"
+
+DIRECTORIES=( ~/Development ~/Development/java ~/Development/java/gateways ~/Development/go/src/square/up )
+function goto {
+    for d in "${DIRECTORIES[@]}"
+    do
+        TESTDIR="$d/$1"
+        if [ -d "$TESTDIR" ]; then
+            echo "Jumping to $TESTDIR"
+            cd $TESTDIR
+            return 0
+        fi
+    done
+    echo "Failed to find $1"
+    return 1
+}
+
+tab() {
+    osascript &>/dev/null <<EOF
+      tell application "iTerm"
+        activate
+        tell current window to set tb to create tab with default profile
+        tell current session of current window to write text "$1"
+      end tell
+EOF
+}
+
+roll(){
+  if [ -z "$1" ]
+  then
+    echo "Need app name"
+    return 1
+  fi
+
+  sha=""
+  if [ -z "$2" ]
+  then
+    sha=`git rev-parse HEAD`
+  else
+    sha="$2"
+  fi
+
+  cd ~/Development/java/ && ../roller3/roller "$1" "$sha"
+}
+
+pulse_again() {
+    ps j -A | grep -iE '[P]ulse' | awk '!seen[$4]++ { print $4 }' | xargs -I{} sudo kill -SIGTERM -- -{}
+}
